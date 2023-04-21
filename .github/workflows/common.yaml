@@ -1,0 +1,35 @@
+name: Common CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [main]
+    types: ["opened", "edited", "reopened", "synchronize"]
+
+jobs:
+  check_syntax_and_format:
+    name: Check Syntax and Format
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install ESLint
+        run: npm install
+      - name: Build the Project
+        run: npm run build
+      - name: Run ESLint
+        run: npm run lint
+
+  check_pr_title:
+    name: Check PR Title
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: npm install @commitlint/config-conventional
+      - uses: JulienKode/pull-request-name-linter-action@v0.5.0
