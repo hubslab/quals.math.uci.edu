@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "@nuxtjs/eslint-config-typescript"
+  ],
+  "rules": {
+    "eol-last": "error",
+    "max-len": [
+      "error",
+      120
+    ]
+  }
+}
