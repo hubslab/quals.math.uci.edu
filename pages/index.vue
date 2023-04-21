@@ -5,7 +5,7 @@
         <div
           v-for="entry in postMap"
           :key="entry[0]"
-          class="bg-sky-100 rounded-md p-4 shadow-md hover:scale-105 transition"
+          class="bg-sky-100 rounded-md p-4 shadow-md"
         >
           <h2 class="capitalize font-bold text-2xl">
             {{ entry[0] }} Qualification
@@ -13,7 +13,7 @@
           <ul>
             <li v-for="(item, index) in entry[1]" :key="`${entry[0]}-${item[0]}`">
               <span class="mr-2">{{ index + 1 }}.</span>
-              <NuxtLink :to="item[1]" class="capitalize">
+              <NuxtLink :to="item[1]" class="capitalize hover:text-blue-400 transition">
                 {{ item[0] }}
               </NuxtLink>
             </li>
