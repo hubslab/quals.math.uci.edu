@@ -7,7 +7,7 @@
           :key="entry[0]"
           class="bg-sky-100 rounded-md p-4 shadow-md hover:scale-105 transition"
         >
-          <h2 class="capitalize font-bold text-2xl font-cartoonist">
+          <h2 class="capitalize font-bold text-2xl">
             {{ entry[0] }} Qualification
           </h2>
           <ul>

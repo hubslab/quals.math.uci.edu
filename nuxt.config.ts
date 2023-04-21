@@ -49,5 +49,10 @@ export default defineNuxtConfig({
       remarkPlugins: ['remark-math'],
       rehypePlugins: ['rehype-katex']
     }
+  },
+  app: {
+    head: {
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.webp' }]
+    }
   }
 })
