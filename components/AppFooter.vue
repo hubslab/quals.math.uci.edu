@@ -1,5 +1,8 @@
 <template>
-  <footer class="bg-blue-700 text-white flex flex-row gap-4 items-center justify-between p-4 shadow-md">
+  <footer
+    class="font-cartoonist bg-blue-700 text-white
+  flex flex-row gap-4 items-center justify-between p-4 shadow-md text-xl"
+  >
     <div class="text-center flex-1">
       <span>
         © 2023 - {{ (new Date()).getFullYear() }}

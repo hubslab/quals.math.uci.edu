@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col itmes-center">
-    <AppHeader class="sticky top-0" />
-    <main class="p-4">
+  <div class="flex flex-col items-center">
+    <AppHeader class="sticky top-0 w-full" />
+    <main class="p-4 w-full">
       <slot />
     </main>
-    <AppFooter />
+    <AppFooter class="w-full" />
   </div>
 </template>
