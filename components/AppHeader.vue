@@ -4,8 +4,8 @@
       <img class="w-10 h-10" src="/logo.webp" alt="Quals Logo">
     </div>
     <NuxtLink to="/">
-      <div class="bg-blue-500 py-2 px-4 rounded-md text-xl font-bold hover:scale-105 transition shadow-md">
-        Qualification
+      <div class="font-cartoonist bg-blue-500 py-2 px-4 rounded-md text-xl font-bold hover:scale-105 transition shadow-md">
+        UC Mathematics Qualifying Exams
       </div>
     </NuxtLink>
   </header>
