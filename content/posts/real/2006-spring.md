@@ -20,9 +20,9 @@ See [Problem 5 of 2023 Winter Real Analysis](/pdfs/quals/2023WR.html).
 
 ## Problem 3
 
-[Given a measure space $(X,\mathfrak U,\mu)$, let $(f_n\mid n\in\mathbb N)$ and $f$ be extended real-valued $\mathfrak U$-measurable functions on a set $D\in\mathfrak U$ and assume that $f$ is real-valued a.e. on $D$. Suppose there exists a sequence of positive numbers $(\epsilon_n\mid n\in\mathbb N)$ such that:]{.text-red-500}
+[Given a measure space $(X,\mathfrak U,\mu)$, let $(f_n\mid n\in\mathbb N)$ and $f$ be extended real-valued $\mathfrak U$-measurable functions on a set $D\in\mathfrak U$ and assume that $f$ is real-valued a.e. on $D$. Suppose there exists a sequence of positive numbers $(\eps_n\mid n\in\mathbb N)$ such that:]{.text-red-500}
 
-1. $\sum_{n\in\mathbb N}\epsilon_n<\infty$
-2. $\int_D|f_n-f|^pd\mu<\epsilon_n$ for every $n\in\mathbb N$ for some fixed $p\in(0,\infty)$
+1. $\sum_{n\in\mathbb N}\eps_n<\infty$
+2. $\int_D|f_n-f|^pd\mu<\eps_n$ for every $n\in\mathbb N$ for some fixed $p\in(0,\infty)$
 
 Show that the sequence $(f_n\mid n\in\mathbb N)$ convergens to $f$ a.e. on $D$.

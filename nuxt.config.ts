@@ -47,7 +47,11 @@ export default defineNuxtConfig({
   content: {
     markdown: {
       remarkPlugins: ['remark-math'],
-      rehypePlugins: ['rehype-katex']
+      rehypePlugins: [['rehype-katex', {
+        macros: {
+          '\\eps': '\\varepsilon'
+        }
+      }]]
     }
   },
   app: {

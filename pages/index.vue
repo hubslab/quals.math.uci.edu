@@ -11,10 +11,10 @@
             {{ entry[0] }} Qualification
           </h2>
           <ul>
-            <li v-for="(item, index) in entry[1]" :key="`${entry[0]}-${item[0]}`">
-              <span class="mr-2">{{ index + 1 }}.</span>
-              <NuxtLink :to="item[1]" class="capitalize hover:text-blue-400 transition">
-                {{ item[0] }}
+            <li v-for="(item, index) in entry[1].sort(sortPosts)" :key="`${entry[0]}-${item.title}`">
+              <span class="w-6 inline-block">{{ index + 1 }}.</span>
+              <NuxtLink :to="item.path" class="capitalize hover:text-blue-400 transition">
+                {{ item.title }}
               </NuxtLink>
             </li>
           </ul>
@@ -27,14 +27,36 @@
 <script setup lang="ts">
 const posts = await queryContent('/posts').only(['_path', '_dir', 'title']).find()
 
-// Map<type, Map<title, path>>
-const postMap = new Map<string, Map<string, string>>()
+// Map<type, [{title, path}]>
+interface Post {
+  title: string
+  path: string
+}
+
+const postMap = new Map<string, Post[]>()
 
 for (const post of posts) {
   if (!postMap.has(post._dir)) {
-    postMap.set(post._dir, new Map<string, string>())
+    postMap.set(post._dir, [])
   }
 
-  postMap.get(post._dir)?.set(post.title, post._path)
+  postMap.get(post._dir)?.push({
+    title: post.title,
+    path: post._path
+  })
+}
+
+function sortPosts (a: Post, b: Post) {
+  const aPath = a.path.split('/').at(-1) as string
+  const bPath = b.path.split('/').at(-1) as string
+
+  const [aYear, aQuarter] = aPath.split('-')
+  const [bYear, bQuarter] = bPath.split('-')
+
+  if (aYear !== bYear) {
+    return parseInt(bYear) - parseInt(aYear)
+  }
+
+  return aQuarter.localeCompare(bQuarter)
 }
 </script>

@@ -6,7 +6,7 @@ export default <Partial<Config>> {
   ],
   theme: {
     fontFamily: {
-      cartoonist: ['SF_Cartoonist']
+      cartoonist: ['SF_Cartoonist_Hand']
     }
   }
 }
