@@ -7,13 +7,13 @@
           :key="entry[0]"
           class="bg-sky-100 rounded-md p-4 shadow-md"
         >
-          <h2 class="capitalize font-bold text-2xl">
+          <h2 class="capitalize font-bold text-3xl">
             {{ entry[0].replaceAll('-', ' ') }}
           </h2>
           <ul>
             <li v-for="(item, index) in entry[1].sort(sortPosts)" :key="`${entry[0]}-${item.title}`">
               <span class="w-6 inline-block">{{ index + 1 }}.</span>
-              <NuxtLink :to="item.path" class="capitalize hover:text-blue-400 transition">
+              <NuxtLink :to="item.path" class="capitalize hover:text-blue-400 transition text-xl">
                 {{ item.title }}
               </NuxtLink>
             </li>

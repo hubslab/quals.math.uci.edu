@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="font-cartoonist bg-blue-700 text-white
+    class="bg-blue-700 text-white
   flex flex-row gap-4 items-center justify-between p-4 shadow-md
   text-xl text-center"
   >
@@ -27,8 +27,5 @@
 const links = [{
   title: 'Geometry Discovery Project',
   url: 'https://gdp.math.uci.edu'
-}, {
-  title: 'Prof. Zhiqin Lu\'s Homepage',
-  url: 'https://lu.math.uci.edu'
 }]
 </script>
