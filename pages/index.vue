@@ -59,4 +59,8 @@ function sortPosts (a: Post, b: Post) {
 
   return aQuarter.localeCompare(bQuarter)
 }
+
+useHead({
+  title: 'Home'
+})
 </script>

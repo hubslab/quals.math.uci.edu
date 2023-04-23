@@ -56,7 +56,8 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.webp' }]
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.webp' }],
+      titleTemplate: '%s | UC Math Qualifying Exams'
     }
   }
 })
