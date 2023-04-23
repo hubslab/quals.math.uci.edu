@@ -8,7 +8,7 @@ html {
 }
 
 .katex {
-    @apply text-lg;
+    @apply text-xl;
 }
 
 .katex-display {
