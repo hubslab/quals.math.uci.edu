@@ -8,7 +8,7 @@
           class="bg-sky-100 rounded-md p-4 shadow-md"
         >
           <h2 class="capitalize font-bold text-2xl">
-            {{ entry[0] }} Qualification
+            {{ entry[0].replaceAll('-', ' ') }}
           </h2>
           <ul>
             <li v-for="(item, index) in entry[1].sort(sortPosts)" :key="`${entry[0]}-${item.title}`">
@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-const posts = await queryContent('/posts').only(['_path', '_dir', 'title']).find()
+const posts = await queryContent('/posts').only(['_path', '_dir']).find()
 
 // Map<type, [{title, path}]>
 interface Post {
@@ -41,7 +41,7 @@ for (const post of posts) {
   }
 
   postMap.get(post._dir)?.push({
-    title: post.title,
+    title: post._path.split('/').at(-1).replaceAll('-', ' '),
     path: post._path
   })
 }
