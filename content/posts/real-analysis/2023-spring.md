@@ -1,4 +1,4 @@
-# 2023 Winter Real Analysis
+# 2023 Spring Real Analysis
 
 ::ProblemBlock{number=1}
 #problem
