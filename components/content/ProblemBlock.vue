@@ -14,6 +14,13 @@
       <hr class="mt-1 mb-2 border-black border rounded-full">
       <slot name="proof" />
     </div>
+    <div v-if="$slots.remark">
+      <h3 :id="`remark-${number}`" class="my-1">
+        Remark
+      </h3>
+      <hr class="mt-1 mb-2 border-black border rounded-full">
+      <slot name="remark" />
+    </div>
   </AppCard>
 </template>
 
