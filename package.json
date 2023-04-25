@@ -13,10 +13,10 @@
     "@nuxtjs/tailwindcss": "^6.6.6",
     "@tailwindcss/typography": "^0.5.9",
     "@types/katex": "^0.16.0",
-    "@types/node": "^18.15.12",
-    "eslint": "^8.38.0",
+    "@types/node": "^18.16.0",
+    "eslint": "^8.39.0",
     "katex": "^0.16.6",
-    "nuxt": "^3.4.1",
+    "nuxt": "^3.4.2",
     "rehype-katex": "^6.0.3",
     "remark-math": "^5.1.1"
   }
