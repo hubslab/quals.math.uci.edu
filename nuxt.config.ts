@@ -1,8 +1,8 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/content',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxt/content'
   ],
   app: {
     head: {
@@ -11,8 +11,7 @@ export default defineNuxtConfig({
     }
   },
   css: [
-    'katex/dist/katex.min.css',
-    '~/assets/css/main.css'
+    'katex/dist/katex.min.css'
   ],
   content: {
     markdown: {
@@ -23,5 +22,8 @@ export default defineNuxtConfig({
         }
       }]]
     }
+  },
+  tailwindcss: {
+    viewer: false
   }
 })
