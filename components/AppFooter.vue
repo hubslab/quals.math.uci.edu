@@ -8,9 +8,10 @@
       <span>
         © 2023 - {{ (new Date()).getFullYear() }}
       </span>
-      <NuxtLink to="https://math.uci.edu" class="hover:text-blue-400 transition">
-        UC Irvine Math Department
+      <NuxtLink to="https://lu.math.uci.edu/" class="hover:text-blue-400 transition">
+        Zhiqin Lu
       </NuxtLink>
+      <span>All Rights Reserved</span>
     </div>
     <div class="flex-1 flex flex-col flex-wrap">
       <div>Other Links:</div>

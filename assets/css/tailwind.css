@@ -6,12 +6,12 @@ html {
     @apply scroll-smooth;
 }
 
-.katex {
+.math {
     @apply text-base;
 }
 
 .katex-display {
-    @apply overflow-x-auto overflow-y-hidden text-base;
+    @apply overflow-x-auto overflow-y-hidden;
 }
 
 @font-face {
