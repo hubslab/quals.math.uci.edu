@@ -2,13 +2,13 @@
 
 ::ProblemBlock{number=1}
 #problem
- Consder a measure space $(X,\mathcal A,\mu)$ and a sequence of measurable sets $E_n$, $n\in\mathbb N$
+ Consider a measure space $(X,\mathcal A,\mu)$ and a sequence of measurable sets $E_n$, $n\in\mathbb N$
             such that
 $$
             \sum_{n=1}^\infty\mu(E_n)<\infty. 
 $$ 
-Show that almost every $x\in X$ is an element of at most fintely many
-                $E_n$'s
+Show that almost every $x\in X$ is an element of at most finitely many
+                $E_n$'s.
 
 #proof
 The condition is equivalent to
@@ -114,7 +114,7 @@ $$
 #proof
 For part (a), functions $|x|^{-n/p}\chi_{\R^n\backslash B_1}$ and $|x|^{-n/q}\chi_{B_1}$ do the trick.
 
-For part (b), without loss of generality, we assme that $f$ is a nonnegative function. We shall seek positive
+For part (b), without loss of generality, we assume that $f$ is a nonnegative function. We shall seek positive
         numbers
         $a,b$ such that
 $$
@@ -147,12 +147,12 @@ $$
 A_r^r \leq \frac{\eps^{p-r}}{K} A_p^p + \frac{\eps^{q-r}}{L} A_q^q, \qquad\qquad\qquad\qquad \qquad\qquad(1)
 $$
 
-where $A_s=\|f\|_s$. In order to get the optimal $\eps$, we take the derivetive of the above right side
+where $A_s=\|f\|_s$. In order to get the optimal $\eps$, we take the derivative of the above right side
         with respect to $\eps$ to get
 $$
         (p-r)\frac{\eps^{p-r-1}}{K}A_p^p+(q-r)\frac{\eps^{q-r-1}}{L}A_q^q=0.
 $$
-We can simplifiy the above to get
+We can simplify the above to get
 $$
         \eps^q A_q^q=\eps^pA_p^p.
 $$
@@ -179,7 +179,7 @@ $$
                 \|f\|_{L^p([0,1])}\leq \liminf_{n\to\infty}\|f_n\|_{L^p([0,1])}.
 $$
            
-(b). Give an example where the ineqiality in part (a) is strict.
+(b). Give an example where the inequality in part (a) is strict.
             
 
 #proof

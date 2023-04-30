@@ -17,7 +17,7 @@ html {
 @font-face {
     font-family: 'SF_Cartoonist_Hand';
     font-style: italic;
-    font-weight: 700;
+    font-weight: 400;
     font-display: swap;
     src: url('/fonts/SF_Cartoonist_Hand/SF_Cartoonist_Hand_Bold_Italic.ttf') format('truetype');
 }
@@ -25,23 +25,7 @@ html {
 @font-face {
     font-family: 'SF_Cartoonist_Hand';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     font-display: swap;
     src: url('/fonts/SF_Cartoonist_Hand/SF_Cartoonist_Hand_Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'SF_Cartoonist_Hand';
-    font-style: italic;
-    font-weight: 400;
-    font-display: swap;
-    src: url('/fonts/SF_Cartoonist_Hand/SF_Cartoonist_Hand_Italic.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'SF_Cartoonist_Hand';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('/fonts/SF_Cartoonist_Hand/SF_Cartoonist_Hand.ttf') format('truetype');
 }

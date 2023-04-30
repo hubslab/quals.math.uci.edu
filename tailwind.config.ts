@@ -7,6 +7,11 @@ export default <Partial<Config>> {
   theme: {
     fontFamily: {
       cartoonist: ['SF_Cartoonist_Hand']
+    },
+    extend: {
+      colors: {
+        problem: '#1a3b6e'
+      }
     }
   }
 }
