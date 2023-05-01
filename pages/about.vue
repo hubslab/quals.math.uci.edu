@@ -34,8 +34,32 @@ function getAvatar (name: string): string {
   return `https://ui-avatars.com/api/?background=335fdc&color=fff&name=${encodeURIComponent(name)}`
 }
 
-const contributors: Contributor[] = (await queryContent('/contributors').only(['body']).findOne()).body
-  .sort((a: Contributor, b: Contributor) => a.name.localeCompare(b.name))
+function sortContributor (a: Contributor, b: Contributor) {
+  const roleMap: {
+    [key: string]: number
+  } = {
+    developer: 1,
+    coordinator: 2,
+    student_associate: 3
+  }
+
+  const aRole = roleMap[a.role.replaceAll(' ', '_').toLowerCase()]
+  const bRole = roleMap[b.role.replaceAll(' ', '_').toLowerCase()]
+
+  if (aRole && bRole && aRole !== bRole) {
+    return aRole - bRole
+  }
+
+  const aLastName = a.name.split(' ').at(-1) || a.name
+  const bLastName = b.name.split(' ').at(-1) || b.name
+
+  return aLastName.localeCompare(bLastName)
+}
+
+const contributors: Contributor[] = (await queryContent('/contributors')
+  .only(['body'])
+  .findOne()).body
+  .sort(sortContributor)
 
 useHead({
   title: 'About'
