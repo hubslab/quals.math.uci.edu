@@ -6,12 +6,16 @@ html {
     @apply scroll-smooth;
 }
 
-.math {
-    @apply text-base;
+.math path {
+    @apply stroke-[36px]
 }
 
-.katex-display {
-    @apply overflow-x-auto overflow-y-hidden;
+.math-inline svg {
+    @apply inline
+}
+
+.math-display svg {
+    @apply m-auto
 }
 
 @font-face {

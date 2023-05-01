@@ -6,10 +6,19 @@
     <NuxtLink to="/">
       <div
         class="bg-blue-500 py-2 px-4
-      rounded-md text-md font-bold hover:scale-105 transition shadow-md
+      rounded-md text-sm font-bold hover:scale-105 transition shadow-md
       sm:text-xl"
       >
         UC Mathematics Qualifying Exams Home
+      </div>
+    </NuxtLink>
+    <NuxtLink to="/about">
+      <div
+        class="bg-blue-500 py-2 px-4
+      rounded-md text-sm font-bold hover:scale-105 transition shadow-md
+      sm:text-xl"
+      >
+        About
       </div>
     </NuxtLink>
   </header>

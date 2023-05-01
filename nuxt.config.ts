@@ -10,17 +10,18 @@ export default defineNuxtConfig({
       titleTemplate: '%s | UC Math Qualifying Exams'
     }
   },
-  css: [
-    'katex/dist/katex.min.css'
-  ],
   content: {
     markdown: {
       remarkPlugins: ['remark-math'],
-      rehypePlugins: [['rehype-katex', {
-        macros: {
-          '\\eps': '\\varepsilon'
-        }
-      }]]
+      rehypePlugins: [
+        ['rehype-mathjax', {
+          tex: {
+            macros: {
+              eps: '{\\varepsilon}'
+            }
+          }
+        }]
+      ]
     }
   },
   tailwindcss: {

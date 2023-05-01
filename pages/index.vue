@@ -1,9 +1,9 @@
 <template>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 grid-cols-1">
+  <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 grid-cols-2">
     <AppCard
       v-for="entry in postMap"
       :key="entry[0]"
-      class="bg-sky-100"
+      class="bg-white"
     >
       <h2 class="capitalize font-bold text-3xl">
         {{ entry[0].replaceAll('-', ' ') }}

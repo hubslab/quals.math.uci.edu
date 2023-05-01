@@ -1,20 +1,7 @@
 <template>
-  <footer
-    class="bg-blue-700 text-white
-  flex flex-row gap-4 items-center justify-between p-4 shadow-md
-  text-xl text-center"
-  >
-    <div class="flex-1">
-      <span>
-        © 2023 - {{ (new Date()).getFullYear() }}
-      </span>
-      <NuxtLink to="https://lu.math.uci.edu/" class="hover:text-blue-400 transition">
-        Zhiqin Lu
-      </NuxtLink>
-      <span>All Rights Reserved</span>
-    </div>
-    <div class="flex-1 flex flex-col flex-wrap">
-      <div>Other Links:</div>
+  <footer class="bg-blue-700 flex flex-row items-center gap-4 text-white p-4 shadow-md text-xl">
+    <div>Other Links:</div>
+    <div class="flex-1 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
       <div v-for="item in links" :key="item.title">
         <NuxtLink :to="item.url" class="hover:text-blue-400 transition">
           {{ item.title }}
