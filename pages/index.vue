@@ -1,5 +1,5 @@
 <template>
-  <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 grid-cols-2">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     <AppCard
       v-for="entry in postMap"
       :key="entry[0]"

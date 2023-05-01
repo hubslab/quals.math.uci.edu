@@ -1,7 +1,10 @@
 <template>
-  <header class="bg-blue-700 shadow-md text-white px-4 py-3 flex flex-row items-center gap-4">
-    <div class="bg-blue-500 p-3 rounded-full shadow-md">
-      <img class="w-6 h-auto sm:w-10" src="/logo.webp" alt="Quals Logo">
+  <header
+    class="bg-blue-700 shadow-md text-white px-3 py-3 flex flex-row items-center
+  justify-center sm:justify-normal gap-3"
+  >
+    <div class="bg-blue-500 p-3 rounded-full shadow-md hidden sm:block">
+      <img class="h-auto w-8" src="/logo.webp" alt="Quals Logo">
     </div>
     <NuxtLink to="/">
       <div
