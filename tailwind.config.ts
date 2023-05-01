@@ -13,5 +13,8 @@ export default <Partial<Config>> {
         problem: '#1a3b6e'
       }
     }
-  }
+  },
+  safelist: [{
+    pattern: /(text)-(\w*)/
+  }]
 }
