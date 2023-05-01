@@ -7,15 +7,19 @@ html {
 }
 
 .math path {
-    @apply stroke-[36px]
+    @apply stroke-[36px];
 }
 
 .math-inline svg {
-    @apply inline
+    @apply inline;
 }
 
 .math-display svg {
-    @apply m-auto
+    @apply mx-auto;
+}
+
+.math-display {
+    @apply overflow-x-scroll overflow-y-hidden;
 }
 
 @font-face {
