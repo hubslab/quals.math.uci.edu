@@ -19,7 +19,7 @@ html {
 }
 
 .math-display {
-    @apply overflow-x-scroll overflow-y-hidden;
+    @apply overflow-auto;
 }
 
 @font-face {
