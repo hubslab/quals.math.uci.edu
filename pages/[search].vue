@@ -25,13 +25,18 @@
             <h1 class="text-lg">
               {{ post.title }}
             </h1>
-            <p>{{ post.plainText.substr(0, 120) }}...</p>
+            <p class="text-gray-500">
+              ... {{ post.plainText.substr(120, 360) }}...
+            </p>
+            <p class="text-gray-700">
+              {{ post.withMath }}
+            </p>
           </AppCard>
         </NuxtLink>
       </div>
       <div v-else>
         <AppCard class="bg-gray-200">
-          No Result Found
+          No Results Found
         </AppCard>
       </div>
     </div>
@@ -41,6 +46,7 @@
 <script setup lang="ts">
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/solid'
 import { ParsedContent } from '@nuxt/content/dist/runtime/types'
+import { compareQuarters } from '~/utils'
 
 interface Query {
   s?: string
@@ -53,13 +59,29 @@ const route = useRoute()
 
 async function updatePosts (query: Query) {
   const keyword = query.s
-  if (keyword !== '') {
-    const response = await queryContent('/posts').only(['title', 'plainText', '_path']).where({
+  if (keyword && keyword !== '') {
+    const regex = keyword.trim().replaceAll(/\s+/g, '|')
+    const response = await queryContent('/posts').only(['title', 'plainText', '_path', 'withMath']).where({
       $or: [
-        { title: { $regex: `/${keyword}/ig` } },
-        { plainText: { $regex: `/${keyword}/ig` } }
+        { title: { $regex: `/${regex}/ig` } },
+        { plainText: { $regex: `/${regex}/ig` } }
       ]
     }).find() as ParsedContent[]
+
+    response.sort((a, b) => {
+      const aYear = a.title?.split(' ')[0] || ''
+      const bYear = b.title?.split(' ')[0] || ''
+
+      if (aYear !== bYear) {
+        return bYear.localeCompare(aYear)
+      }
+
+      const aQuarter = a.title?.split(' ')[1] || ''
+      const bQuarter = b.title?.split(' ')[1] || ''
+
+      return compareQuarters(aQuarter, bQuarter)
+    })
+
     posts.value = response
   }
 }

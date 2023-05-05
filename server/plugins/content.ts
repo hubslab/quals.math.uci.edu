@@ -3,18 +3,18 @@ import { Node as UnistNode } from 'unist'
 interface Node extends UnistNode {
   value: 'text' | string
   children?: Node[]
-  tag?: 'style' | string
+  tag?: string
 }
 
 function toText (root: Node) {
   let text = ''
 
   function recurse (node: Node) {
-    if (node.type === 'text') {
-      text += node.value
+    if (node.type === 'text' && !node.tag) {
+      text += ` ${node.value}`
     }
 
-    if (node.children && node.tag !== 'style') {
+    if (node.children) {
       for (const child of node.children) {
         recurse(child)
       }
