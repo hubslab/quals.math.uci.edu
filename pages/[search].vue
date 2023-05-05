@@ -18,23 +18,23 @@
         Search
       </NuxtLink>
     </div>
-    <div v-if="route.query.s">
-      <div v-if="posts && posts.length > 0" class="flex flex-col items-center gap-4">
+    <div v-if="route.query.s && posts">
+      <div v-if="posts.length > 0" class="flex flex-col items-center gap-4">
         <NuxtLink v-for="post in posts" :key="post.title" :to="post._path" class="w-full">
           <AppCard class="bg-gray-200 hover:bg-gray-100 transition">
             <h1 class="text-lg">
               {{ post.title }}
             </h1>
             <p class="text-gray-500">
-              ... {{ post.plainText.substr(120, 360) }}...
-            </p>
-            <p class="text-gray-700">
-              {{ post.withMath }}
+              <Highlighter
+                :text-to-highlight="post.plainText"
+                :search-words="keywords"
+              />
             </p>
           </AppCard>
         </NuxtLink>
       </div>
-      <div v-else>
+      <div v-else-if="posts.length === 0">
         <AppCard class="bg-gray-200">
           No Results Found
         </AppCard>
@@ -46,6 +46,7 @@
 <script setup lang="ts">
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/solid'
 import { ParsedContent } from '@nuxt/content/dist/runtime/types'
+import Highlighter from 'vue-highlight-words'
 import { compareQuarters } from '~/utils'
 
 interface Query {
@@ -54,6 +55,7 @@ interface Query {
 
 const posts = ref<ParsedContent[] | null>(null)
 const keywordInput = ref<string>('')
+const keywords = ref<string[]>([])
 
 const route = useRoute()
 
@@ -80,6 +82,29 @@ async function updatePosts (query: Query) {
       const bQuarter = b.title?.split(' ')[1] || ''
 
       return compareQuarters(aQuarter, bQuarter)
+    })
+
+    keywords.value = keyword.trim().split(/\s+/g)
+    response.forEach((post) => {
+      let idx = -1
+      keywords.value.some((keyword) => {
+        idx = post.plainText.toLowerCase().indexOf(keyword.toLowerCase())
+        return idx
+      })
+
+      const postLength = post.plainText.length
+      const start = Math.max(0, idx - 60)
+      const end = Math.min(postLength, start + 360)
+
+      post.plainText = post.plainText.substring(start, end)
+
+      if (start > 0) {
+        post.plainText = '... ' + post.plainText
+      }
+
+      if (end < postLength) {
+        post.plainText += '...'
+      }
     })
 
     posts.value = response

@@ -19,6 +19,7 @@
     "eslint": "^8.39.0",
     "nuxt": "^3.4.3",
     "rehype-mathjax": "^4.0.2",
-    "remark-math": "^5.1.1"
+    "remark-math": "^5.1.1",
+    "vue-highlight-words": "^3.0.1"
   }
 }

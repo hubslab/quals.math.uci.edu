@@ -34,6 +34,9 @@ devDependencies:
   remark-math:
     specifier: ^5.1.1
     version: 5.1.1
+  vue-highlight-words:
+    specifier: ^3.0.1
+    version: 3.0.1(vue@3.2.47)
 
 packages:
 
@@ -4196,6 +4199,10 @@ packages:
       hast-util-parse-selector: 3.1.1
       property-information: 6.2.0
       space-separated-tokens: 2.0.2
+    dev: true
+
+  /highlight-words-core@1.2.2:
+    resolution: {integrity: sha512-BXUKIkUuh6cmmxzi5OIbUJxrG8OAk2MqoL1DtO3Wo9D2faJg2ph5ntyuQeLqaHJmzER6H5tllCDA9ZnNe9BVGg==}
     dev: true
 
   /hookable@5.5.3:
@@ -8490,6 +8497,15 @@ packages:
       semver: 7.5.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vue-highlight-words@3.0.1(vue@3.2.47):
+    resolution: {integrity: sha512-t6L0+KRaMzX5RVubWl6Sog+Aa+U0kHsbUlDIrln1VfajR2SEg+zQYfXov8UmX3MLNOfd6cv7MCM6LclqNlW4ww==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      highlight-words-core: 1.2.2
+      vue: 3.2.47
     dev: true
 
   /vue-router@4.1.6(vue@3.2.47):
